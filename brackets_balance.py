@@ -9,7 +9,7 @@ def brackets_balance(input_string):
     if len(input_string) % 2 != 0:#если скобок нечетное количество - нет пары какой-то скобке
         return False
     new_string = re.sub("[^\{\}\(\)]*", "", input_string)#удаляем все кроме скобок
-    while re.search("(\(\))+|(\{\})+", new_string):#пока в строке есть рядом стоящие скобки и она не пустая
+    while re.search("(\(\))+|(\{\})+", new_string):#пока в строке есть рядом стоящие скобки
         new_string = re.sub("(\(\))+|(\{\})+", "", new_string)#удаляем вся рядом стоящие скобки
     return False if new_string else True#если после этой процедуры получаем пустую строку - все ок
 #test
