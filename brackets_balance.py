@@ -6,9 +6,9 @@
 Написать функцию, ктр проверит баланс скобок в заданной строке."""
 import re
 def brackets_balance(input_string):
-    if len(input_string) % 2 != 0:#если скобок нечетное количество - нет пары какой-то скобке
-        return False
     new_string = re.sub("[^\{\}\(\)]*", "", input_string)#удаляем все кроме скобок
+    if len(new_string) % 2 != 0:#если скобок нечетное количество - нет пары какой-то скобке
+        return False
     while re.search("(\(\))+|(\{\})+", new_string):#пока в строке есть рядом стоящие скобки
         new_string = re.sub("(\(\))+|(\{\})+", "", new_string)#удаляем вся рядом стоящие скобки
     return False if new_string else True#если после этой процедуры получаем пустую строку - все ок
