@@ -1,3 +1,4 @@
+"""http://telegra.ph/Anons-zadachi-48-Vybory-12-04"""
 def votes(groups):
     groups.sort()
     return sum(map(lambda x: x // 2 + 1, groups[:len(groups)//2 + 1]))
