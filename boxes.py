@@ -3,8 +3,10 @@
 Выясните можно ли одну из этих коробок положить в другую, если разрешены
 повороты коробок вокруг любого ребра на угол 90 градусов.
 """
+
+
 def fit(box1, box2):
-    for a, b in zip(box1, box2):#проверяем попарно
+    for a, b in zip(box1, box2):  # проверяем попарно
         if a > b:
             return False
     return True
@@ -22,9 +24,10 @@ def boxes(a1, b1, c1, a2, b2, c2):
     if fit(box2, box1):
         return "The first box is larger than the second one"
     return "Boxes are incomparable"
-#test
+
+
+# test
 print(boxes(1, 2, 3, 3, 1, 2))
 print(boxes(2, 2, 3, 3, 2, 1))
 print(boxes(2, 2, 3, 3, 2, 3))
 print(boxes(3, 4, 5, 2, 4, 6))
-
